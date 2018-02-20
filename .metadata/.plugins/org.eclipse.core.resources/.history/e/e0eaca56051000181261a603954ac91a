@@ -1,0 +1,58 @@
+package Test.Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage;
+import Pages.RegisterPage;
+import io.appium.java_client.android.AndroidKeyCode;
+
+public class LoginTest extends BrowserInitializer {
+	
+	@Test
+	public void loginApp()  {
+		try{
+			
+			RegisterPage registerPage=new RegisterPage(driver);		
+			registerPage.enterLocalization("Nous");			
+			registerPage.click_Browse();			
+			registerPage.enterUserDetails("Braj", "braj@gmail.com", "454", "Appium");
+			Thread.sleep(3000);			
+			registerPage.click_Java();
+			 Thread.sleep(3000);
+			
+			driver.pressKeyCode(AndroidKeyCode.BACK);
+		    Thread.sleep(3000);
+			  
+		    registerPage.click_AcceptCheckbox();
+		    Thread.sleep(3000);
+			
+		    registerPage.click_RegisterUser();
+			
+			
+			 
+			
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	@AfterMethod
+	public void afterMethod(){
+		
+		
+
+	}	
+	
+	
+	
+}

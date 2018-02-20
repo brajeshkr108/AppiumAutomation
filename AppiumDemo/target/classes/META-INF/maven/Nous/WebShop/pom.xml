@@ -1,0 +1,381 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Nous</groupId>
+  <artifactId>WebShop</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+ <properties>
+<suiteXmlFile>./testng.xml</suiteXmlFile>
+ 
+</properties>
+ 
+  <dependencies>
+
+ <!-- Adding TestNG dependency -->
+<dependency>
+  <groupId>org.testng</groupId>
+  <artifactId>testng</artifactId>
+  <version>6.8</version>
+  <scope>test</scope>
+</dependency>
+
+ <!-- Adding Selenium dependency -->
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.53.0</version>
+</dependency>
+
+ <!-- Adding Appium dependency -->
+
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>4.1.2</version>
+</dependency>
+  
+ 
+ <!-- Adding POI dependency -->
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>poi</artifactId>
+  <version>3.9</version>
+</dependency>
+
+<!-- Adding POI OOXML dependency -->
+<dependency>
+   <groupId>org.apache.poi</groupId>
+   <artifactId>poi-ooxml</artifactId>
+   <version>3.9</version>
+</dependency>
+
+<!-- Adding POI OOXML-Schemas dependency -->
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>poi-ooxml-schemas</artifactId>
+  <version>3.9</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.2</version>
+</dependency>
+
+
+
+<!-- Adding poi-scratchpa dependency -->
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>poi-scratchpad</artifactId>
+  <version>3.9</version>
+</dependency>
+
+<!-- Adding OOXML-Schemas dependency -->
+<dependency>
+   <groupId>org.apache.poi</groupId>
+   <artifactId>ooxml-schemas</artifactId>
+   <version>1.1</version>
+</dependency>
+
+<!-- Adding openxml4j dependency -->
+<dependency>
+  <groupId>org.apache.poi</groupId>
+  <artifactId>openxml4j</artifactId>
+  <version>1.0-beta</version>
+</dependency>
+
+<!-- Adding Extent Reports-mongodb-driver-core dependency -->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.10</version>
+</dependency>
+
+  <!-- Adding Extent Reports dependency -->        
+<dependency>
+  <groupId>com.relevantcodes</groupId>
+  <artifactId>extentreports</artifactId>
+  <version>2.41.1</version>
+</dependency>
+
+<!-- Adding Extent Reports- jsoup dependency --> 
+ <dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.8.3</version>
+</dependency>
+
+<!-- Adding Extent Reports- ant dependency --> 
+<dependency>
+    <groupId>org.apache.ant</groupId>
+    <artifactId>ant</artifactId>
+    <version>1.7.0</version>
+</dependency>
+
+<!-- Adding Extent Reports- ant launcher dependency -->
+<dependency>
+    <groupId>org.apache.ant</groupId>
+    <artifactId>ant-launcher</artifactId>
+    <version>1.7.0</version>
+</dependency>
+
+<!-- Adding Extent Reports- bsh dependency -->
+<dependency>
+    <groupId>org.beanshell</groupId>
+    <artifactId>bsh</artifactId>
+    <version>2.0b4</version>
+</dependency>
+
+<!-- Adding Extent Reports- bson dependency -->
+<dependency>
+    <groupId>org.mongodb</groupId>
+    <artifactId>bson</artifactId>
+    <version>3.0.4</version>
+</dependency>
+
+<!-- Adding Extent Reports- freemarker dependency -->
+<dependency>
+    <groupId>org.freemarker</groupId>
+    <artifactId>freemarker</artifactId>
+    <version>2.3.23</version>
+</dependency>
+
+<!-- Adding Extent Reports- hamcrest-core dependency -->
+<dependency>
+    <groupId>org.hamcrest</groupId>
+    <artifactId>hamcrest-core</artifactId>
+    <version>1.1</version>
+</dependency>
+
+<!-- Adding Extent Reports-jcommander dependency -->
+<dependency>
+    <groupId>com.beust</groupId>
+    <artifactId>jcommander</artifactId>
+    <version>1.48</version>
+</dependency>
+
+<!-- Adding Extent Reports-snakeyaml dependency -->
+<dependency>
+    <groupId>org.yaml</groupId>
+    <artifactId>snakeyaml</artifactId>
+    <version>1.5</version>
+</dependency>
+
+<!-- Adding Extent Reports-sqlite-jdbc dependency -->
+<dependency>
+    <groupId>org.xerial</groupId>
+    <artifactId>sqlite-jdbc</artifactId>
+    <version>3.8.11.1</version>
+</dependency>
+
+<dependency> 
+    <groupId>xml-apis</groupId>
+    <artifactId>xml-apis</artifactId>
+    <version>1.4.01</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+<dependency>
+    <groupId>com.opencsv</groupId>
+    <artifactId>opencsv</artifactId>
+    <version>3.3</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.11</version>
+ <!--    <scope>compile</scope> -->
+</dependency>
+
+
+<!--    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>htmlunit-driver</artifactId>
+        <version>2.27</version>
+    </dependency>  
+ -->
+ 
+ <!-- https://mvnrepository.com/artifact/com.github.detro.ghostdriver/phantomjsdriver -->
+<!-- <dependency>
+    <groupId>com.github.detro.ghostdriver</groupId>
+    <artifactId>phantomjsdriver</artifactId>
+    <version>1.0.1</version>
+</dependency> -->
+
+
+<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/com.browserstack/browserstack-local-java -->
+<dependency>
+    <groupId>com.browserstack</groupId>
+    <artifactId>browserstack-local-java</artifactId>
+    <version>1.0.0</version>
+</dependency>
+
+  <dependency>
+        <groupId>com.googlecode.json-simple</groupId>
+        <artifactId>json-simple</artifactId>
+        <version>1.1.1</version>
+    </dependency>
+ 
+ 
+  </dependencies>
+  
+  
+  
+  
+  
+  <build>
+
+<plugins>
+
+<plugin>
+
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-compiler-plugin</artifactId>
+<version>3.5.1</version>
+<configuration>
+<compilerVersion>1.8</compilerVersion>
+<source>1.6</source>
+<target>1.6</target>
+</configuration>
+</plugin>
+
+
+
+<!-- <plugin>
+<groupId>com.thed.zapi</groupId>
+            <artifactId>zapi-maven-plugin</artifactId>
+            <version>0.1</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>zapi</goal>
+                        </goals>
+                    </execution>
+                </executions>
+        </plugin> -->
+        
+        
+
+<!--  <plugin>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>3.0.1</version>
+    <executions>
+      <execution>
+        <id>copy-resources</id>
+        here the phase you need
+        <phase>validate</phase>
+        <goals>
+          <goal>copy-resources</goal>
+        </goals>
+        <configuration>
+          <outputDirectory>${basedir}/testng-failed.xml</outputDirectory>
+          <resources>          
+            <resource>
+              <directory>${basedir}/testng-failed.xml</directory>
+           <directory>src/</directory>
+              <filtering>true</filtering>
+            </resource>
+          </resources>              
+        </configuration>            
+      </execution>
+    </executions>
+  </plugin>   -->
+  
+
+<!-- <plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.17</version>
+
+<configuration>
+
+<suiteXmlFiles>
+<suiteXmlFile>testng_New.xml</suiteXmlFile>
+<suiteXmlFile>target/surefire-reports/testng-failed.xml</suiteXmlFile>
+</suiteXmlFiles>
+
+</configuration>
+</plugin>
+</plugins> -->
+
+<!--Maven profile-->
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.17</version>
+</plugin>
+</plugins>
+</build>
+
+ <profiles>
+        <profile>
+            <id>single</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>testng_New.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+      
+ <!--   Trigger failed xml    -->  
+        <profile>
+            <id>Failed</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <suiteXmlFiles>
+                                <suiteXmlFile>./test-output/testng-failed.xml</suiteXmlFile>
+                            </suiteXmlFiles>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+         </profiles>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</project>

@@ -1,0 +1,113 @@
+package GlobalInitializer;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import GlobalInitializer.GlobalVariable;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+
+import GenericLibrary.Generic;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class BrowserInitializer {
+
+	// public WebDriver driver;
+	
+	 public static GlobalVariable initializer=GlobalVariable.initialize();
+	 
+
+	public AndroidDriver driver;
+
+	String workingDirectory = System.getProperty("user.dir");
+	// String extent_path = GenericFunctions.getPropertyValue("ExtentReportPath");
+	// String path=workingDirectory+extent_path;
+
+	@BeforeClass
+	public void launchApp() throws InterruptedException, MalformedURLException {
+		
+
+		// Create object of DesiredCapabilities class and specify android platform
+		DesiredCapabilities capabilities = DesiredCapabilities.android();
+
+		
+		// capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
+		capabilities.setCapability(MobileCapabilityType.BROWSER_NAME, "");
+
+		// set the capability to execute our test in Android Platform
+		
+		capabilities.setCapability(MobileCapabilityType.PLATFORM, Platform.ANDROID);
+		
+
+		// we need to define platform name
+		//capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,Generic.getPropertyValue("PlatformName"));
+		
+
+		// Set the device name as well (you can give any name)
+		//capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "CC5BDYG07101");
+		
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, Generic.getPropertyValue("DeviceName"));
+
+		// set the android version as well
+		//capabilities.setCapability(MobileCapabilityType.VERSION, "5.0.2");
+		
+		capabilities.setCapability(MobileCapabilityType.VERSION,Generic.getPropertyValue("Version"));
+
+		//capabilities.setCapability("apppackage", "io.selendroid.testapp");
+		
+		capabilities.setCapability("apppackage", Generic.getPropertyValue("Apppackage"));
+		
+		//capabilities.setCapability("appactivity", ".HomeScreenActivity");
+		capabilities.setCapability("appactivity", Generic.getPropertyValue("Appactivity"));
+
+		String apkFilePath = System.getProperty("user.dir") + "/Apk/selendroid-test-app.apk";
+		capabilities.setCapability("app", apkFilePath);
+		
+		driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		// Create object of URL class and specify the appium server address
+		URL url = new URL("http://0.0.0.0:4723/wd/hub");
+
+		// Create object of AndroidDriver class and pass the url and capability that we
+		
+		driver = new AndroidDriver(url, capabilities);
+
+		Thread.sleep(15000);
+
+	}
+
+	@AfterClass
+	public void closeBrowser() {
+		// extent.close();
+		// driver.close();
+
+	}
+
+	@AfterSuite
+	public void executionResultFile() throws IOException {
+		// File srcHtmlPath=new
+		// File(GenericFunctions.getPropertyValue("newExtentReportPath"));
+		// File destHtmlPath=new
+		// File(GenericFunctions.getPropertyValue("ExtentReportBackUpPath")+"BackUp"+System.currentTimeMillis()+".html");
+		// FileOperations.copyHtmlFile(srcHtmlPath,destHtmlPath);
+
+		/*
+		 * File srcHtmlPath1=new File(GenericFunctions.getPropertyValue(
+		 * "E:\\ITG_SeleniumWorkspace\\target\\surefire-reports\\testng-failed.xml"));
+		 * File destHtmlPath1=new File(GenericFunctions.getPropertyValue(
+		 * "E:\\ITG_SeleniumWorkspace\\src\\main\\resources\\"+"BackUp"+System.currentTimeMillis()+"
+		 * .xml")); FileOperations.copyHtmlFile(srcHtmlPath1,destHtmlPath1);
+		 */
+		// FileOperations.copyHtmlFile("E:\\ITG_SeleniumWorkspace\\target\\surefire-reports\\testng-failed.xml",
+		// "E:\\ITG_SeleniumWorkspace\\src\\main\\"+System.currentTimeMillis()+".xml");
+
+	}
+
+}

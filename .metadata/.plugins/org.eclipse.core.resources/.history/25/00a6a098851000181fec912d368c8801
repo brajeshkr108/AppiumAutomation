@@ -1,0 +1,26 @@
+package GenericLibrary;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+public class Generic {
+
+		public static String getPropertyValue(String propKey) 
+		{
+		   Properties config = null;
+			try {
+				config = new Properties();
+				FileInputStream ip = new FileInputStream("./src/main/java/itg/Utilities/config.properties");
+
+				config.load(ip);
+			} catch (Exception e) {
+			}
+
+			return config.getProperty(propKey);
+		}
+
+	
+	
+	
+	
+	
+}

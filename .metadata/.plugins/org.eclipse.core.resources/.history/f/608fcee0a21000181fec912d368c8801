@@ -1,0 +1,109 @@
+package Test.Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage;
+import Pages.RegisterPage;
+import io.appium.java_client.android.AndroidKeyCode;
+
+public class RegisterUserTest extends BrowserInitializer {
+	
+	@Test
+	public void loginApp()  {
+		try{
+			
+			logger=extent.startTest("Started Selendroid App Testing Using Appium");
+			
+			RegisterPage registerPage=new RegisterPage(driver);		
+			registerPage.enterLocalization("Nous");	
+			logger.log(LogStatus.PASS, "Entered Localization");
+			registerPage.click_Browse();	
+			logger.log(LogStatus.PASS, "Clicked on Browse Button");
+			registerPage.enterUserDetails("Braj", "braj@gmail.com", "454", "Appium");
+			logger.log(LogStatus.PASS, "Entered User Details ");
+			
+			Thread.sleep(3000);			
+			registerPage.click_Java();
+			logger.log(LogStatus.PASS, "Selected Language as java");
+			 Thread.sleep(3000);
+			
+			driver.pressKeyCode(AndroidKeyCode.BACK);
+		    Thread.sleep(3000);
+			  
+		    registerPage.click_AcceptCheckbox();
+		    logger.log(LogStatus.PASS, "Clicked on Accept Checkbox");
+		    Thread.sleep(3000);
+			
+		    registerPage.click_RegisterUser();
+		    logger.log(LogStatus.PASS, "Clicked on Register User");
+
+			     
+			
+			
+			 
+			
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	
+	
+	@AfterMethod
+	public void afterMethod(){		
+		extent.endTest(logger);
+		extent.flush();
+		}
+
+
+	}	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,136 @@
+package Test.Scripts;
+
+import java.util.Hashtable;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import GenericLibrary.Excel;
+import GenericLibrary.Generic;
+import GenericLibrary.Report;
+import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage;
+import Pages.RegisterPage;
+import io.appium.java_client.android.AndroidKeyCode;
+
+public class RegisterUserTest extends BrowserInitializer {
+	
+	
+	@DataProvider
+	public Object[][] getData() {
+		return Excel.getCellValue_inlist(Generic.getPropertyValue("Excelpath"), "CustomerEdit", "CustomerEdit",
+				"CustomerEdit_AccountDetails_MergeAccount_Individual");
+	}
+
+	
+	
+	@Test(dataProvider = "getData")
+	public void loginApp(Hashtable<String, String> tabledata)  {
+		try{
+			
+			initializer.logger=Report.startTest("Started Selendroid App Testing Using Appium");
+			
+			//initializer.logger=initializer.extent.startTest("Started Selendroid App Testing Using Appium");
+						
+			RegisterPage registerPage=new RegisterPage();		
+			registerPage.enterLocalization("Nous");	
+			
+			
+			//initializer.logger.log(LogStatus.PASS, "Entered Localization");
+			Report.passStatus("Started Selendroid App Testing Using Appium");
+			
+			//logger.addScreenCapture(Generic.takeScreenShotPath());
+			
+			//logger.log(LogStatus.INFO, "Screenshots",logger.addScreenCapture(Generic.takeScreenShotPath()));
+			
+			registerPage.click_Browse();	
+			//initializer.logger.log(LogStatus.PASS, "Clicked on Browse Button");
+			Report.passStatus("Clicked on Browse Button");
+			registerPage.enterUserDetails("Braj", "braj@gmail.com", "454", "Appium");
+			Report.passStatus("Entered User Details ");
+			
+			Thread.sleep(3000);			
+			registerPage.click_Java();
+			Report.passStatus("Selected Language as java");
+			 Thread.sleep(3000);
+			
+			 initializer.driver.pressKeyCode(AndroidKeyCode.BACK);
+		    Thread.sleep(3000);
+			  
+		    registerPage.click_AcceptCheckbox();
+		    Report.passStatus("Clicked on Accept Checkbox");
+		    Thread.sleep(3000);
+		    
+		    //logger.log(LogStatus.INFO, "Screenshots",logger.addScreenCapture(Generic.takeScreenShotPath()));
+			
+		    registerPage.click_RegisterUser();
+		    Report.passStatus("Clicked on Register User");
+
+			     
+			
+			
+			 
+			
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	
+	
+	@AfterMethod
+	public void afterMethod(){		
+		initializer.extent.endTest(initializer.logger);
+		initializer.extent.flush();
+		}
+
+
+	}	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+package Test.Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage;
+import Pages.RegisterPage;
+import io.appium.java_client.android.AndroidKeyCode;
+
+public class LoginTest extends BrowserInitializer {
+	
+	@Test
+	public void loginApp()  {
+		try{
+		
+			/*LoginPage loginpage=new LoginPage(driver);
+			loginpage.login("vfd", "554");
+			System.out.println("Login done");
+			Thread.sleep(6000);*/
+			
+			RegisterPage loginpage=new RegisterPage(driver);
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			 driver.findElement(By.xpath("//android.widget.EditText[@content-desc='my_text_fieldCD']")).sendKeys("nousinfo");
+			  System.out.println("Data Entered successfully");
+			  
+			  driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc='startUserRegistrationCD']")).click();
+			  
+			  Thread.sleep(5000);
+			  //driver.findElement(By.xpath("//android.widget.EditText[@resource-id='io.selendroid.testapp:id/inputUsername']")).sendKeys("Brajesh");
+			  WebElement username=driver.findElement(By.xpath("//android.widget.EditText[@index='2']"));
+			  username.sendKeys("Brajesh"+"\n");
+			  System.out.println("Username entered successfully");
+			  Thread.sleep(3000);
+			  
+			 
+			  //driver.findElement(By.xpath("//android.widget.EditText[@index='4']")).sendKeys("brajesh4g@gmail.com");
+			  WebElement email =driver.findElement(By.id("io.selendroid.testapp:id/inputEmail"));
+			  email.sendKeys("braj@ghmail.com"+"\n");
+			  System.out.println("Email entered successfully");
+			  Thread.sleep(3000);
+			  //email.sendKeys(Keys.TAB);
+			  Thread.sleep(3000);
+			  driver.findElement(By.id("io.selendroid.testapp:id/inputPassword")).sendKeys("80456"+"\n");
+			  System.out.println("Password entered successfully");
+			  Thread.sleep(3000);
+			  
+			  
+			  driver.findElement(By.id("io.selendroid.testapp:id/inputName")).clear();
+			  Thread.sleep(2000);
+			  driver.findElement(By.id("io.selendroid.testapp:id/inputName")).sendKeys("TestAutomation"+"\n");
+			  System.out.println("Password entered successfully");
+			  Thread.sleep(3000);
+			  
+			 
+			  
+			  driver.findElement(By.id("io.selendroid.testapp:id/input_preferedProgrammingLanguage")).click();
+			  System.out.println("Clicked on DD");
+			  Thread.sleep(3000);
+			  
+			  driver.findElement(By.xpath("//android.widget.CheckedTextView[@text='Java']")).click();
+			  //driver.findElement(By.name("Java")).click();
+			  System.out.println("Selected on Java");
+			  Thread.sleep(3000);
+			  
+			  //driver.navigate().back();
+			  driver.pressKeyCode(AndroidKeyCode.BACK);
+			  Thread.sleep(3000);
+			  
+			  
+			  driver.findElement(By.id("io.selendroid.testapp:id/input_adds")).click();
+			  System.out.println("Clicked on Chkbox");
+			 
+			  driver.findElement(By.id("io.selendroid.testapp:id/btnRegisterUser")).click();
+			  System.out.println("Clicked on Register User");
+			
+			
+			
+			
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	@AfterMethod
+	public void afterMethod(){
+		
+		
+
+	}	
+	
+	
+	
+}

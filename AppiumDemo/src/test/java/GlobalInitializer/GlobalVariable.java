@@ -1,0 +1,36 @@
+package GlobalInitializer;
+
+import org.openqa.selenium.WebDriver;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class GlobalVariable {
+
+	public static GlobalVariable initializer = null;
+	public AndroidDriver driver = null;
+    public ExtentReports extent = null;
+    public ExtentTest logger = null;
+    public String reportPath = "";
+    public String fileName = "";
+    
+     public String screenShotFilename="";
+    
+    //public String screenShotFilename=System.getProperty("user.dir")+"//src//main//resources//Screenshots//"+"screenshot_"+System.currentTimeMillis()+".png";
+    
+    
+   
+
+    public static GlobalVariable initialize()
+    {
+        if (initializer == null)
+        {
+            initializer = new GlobalVariable();
+        }
+        return initializer;
+    }
+ 
+	
+}

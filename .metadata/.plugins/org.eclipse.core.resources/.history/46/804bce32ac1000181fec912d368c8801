@@ -1,0 +1,76 @@
+package GenericLibrary;
+
+import com.relevantcodes.extentreports.LogStatus;
+
+import GlobalInitializer.GlobalVariable;
+
+public class Report {
+
+	
+	public static GlobalVariable initializer = GlobalVariable.initialize();
+	
+	
+	 public static ExtentTest StartTest(String message)
+     {
+         return initializer.extent.StartTest(message);
+         
+     }
+
+     public static void PassStatus(String message)
+     {
+         initializer.logger.log(LogStatus.PASS, message);
+     }
+
+     public static void FailStatus(String message)
+     {
+    	 initializer.logger.log(LogStatus.PASS, message);
+     }
+
+     public static void Info(String message)
+     {
+    	 initializer.logger.log(LogStatus.PASS, message);
+     }
+
+
+     public static void Error(string message)
+     {
+    	 initializer.logger.log(LogStatus.PASS, message);
+     }
+
+     public static void Skip(string message)
+     {
+    	 initializer.logger.log(LogStatus.PASS, message);
+     }
+
+     public static void Warning(string message)
+     {
+    	 initializer.logger.log(LogStatus.PASS, message);
+     }
+
+
+     public static void EndTest()
+     {
+         //return initializer.extent.StartTest(message);
+
+         initializer.extent.endTest(initializer.logger);
+     }
+
+
+     public static void EndReport()
+     {
+         //extent.EndTest(logger);
+         try
+         {
+             initializer.extent.flush();
+             initializer.extent.close();
+         }
+         catch (Exception ex)
+         {
+             //Console.WriteLine(ex.Message);
+         }
+     }
+
+
+	
+	
+}

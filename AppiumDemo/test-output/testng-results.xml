@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Test Case Started]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="75331" started-at="2018-02-14T15:11:20Z" finished-at="2018-02-14T15:12:36Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="75331" started-at="2018-02-14T15:11:20Z" finished-at="2018-02-14T15:12:36Z">
+      <class name="Test.Scripts.RegisterUserTest">
+        <test-method status="PASS" signature="launchApp()[pri:0, instance:Test.Scripts.RegisterUserTest@146ba0ac]" name="launchApp" is-config="true" duration-ms="19352" started-at="2018-02-14T20:41:20Z" finished-at="2018-02-14T20:41:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="loginApp(java.util.Hashtable)[pri:0, instance:Test.Scripts.RegisterUserTest@146ba0ac]" name="loginApp" duration-ms="55284" started-at="2018-02-14T20:41:40Z" data-provider="getData" finished-at="2018-02-14T20:42:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Name=braj, RegisterUser=Y, Runmode=Y, TestCases=UserRegistrationTest, Email=braj@gmail.com, Localization=Nous}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Test Case Started]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginApp -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:Test.Scripts.RegisterUserTest@146ba0ac]" name="afterMethod" is-config="true" duration-ms="236" started-at="2018-02-14T20:42:35Z" finished-at="2018-02-14T20:42:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="FAIL" signature="closeBrowser()[pri:0, instance:Test.Scripts.RegisterUserTest@146ba0ac]" name="closeBrowser" is-config="true" duration-ms="45" started-at="2018-02-14T20:42:36Z" finished-at="2018-02-14T20:42:36Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Method has not yet been implemented (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'NIBC2503', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_144'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=io.selendroid.testapp, deviceName=CC5BDYG07101, platform=ANDROID, deviceUDID=CC5BDYG07101, desired={app=S:\AppiumAutomation_WorkSpace\AppiumDemo/Apk/selendroid-test-app.apk, appactivity=.HomeScreenActivity, apppackage=io.selendroid.testapp, browserName=, platformName=Android, version=5.0.2, deviceName="CC5BDYG07101", platform=ANDROID}, platformVersion=5.0.2, webStorageEnabled=false, takesScreenshot=true, browserName=, javascriptEnabled=true, platformName=Android, deviceManufacturer=HTC, app=S:\AppiumAutomation_WorkSpace\AppiumDemo/Apk/selendroid-test-app.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, apppackage=io.selendroid.testapp, appWaitPackage=io.selendroid.testapp, appWaitActivity=io.selendroid.testapp.HomeScreenActivity, databaseEnabled=false, version=5.0.2, appActivity=io.selendroid.testapp.HomeScreenActivity, appactivity=.HomeScreenActivity, locationContextEnabled=false, deviceModel=HTC Desire 826 dual sim}]
+Session ID: 5b7cd417-5a85-46b1-8dae-8b5dd778de8b]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Method has not yet been implemented (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 5 milliseconds
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'NIBC2503', ip: '192.168.56.1', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_144'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities [{appPackage=io.selendroid.testapp, deviceName=CC5BDYG07101, platform=ANDROID, deviceUDID=CC5BDYG07101, desired={app=S:\AppiumAutomation_WorkSpace\AppiumDemo/Apk/selendroid-test-app.apk, appactivity=.HomeScreenActivity, apppackage=io.selendroid.testapp, browserName=, platformName=Android, version=5.0.2, deviceName="CC5BDYG07101", platform=ANDROID}, platformVersion=5.0.2, webStorageEnabled=false, takesScreenshot=true, browserName=, javascriptEnabled=true, platformName=Android, deviceManufacturer=HTC, app=S:\AppiumAutomation_WorkSpace\AppiumDemo/Apk/selendroid-test-app.apk, deviceScreenSize=1080x1920, networkConnectionEnabled=true, warnings={}, apppackage=io.selendroid.testapp, appWaitPackage=io.selendroid.testapp, appWaitActivity=io.selendroid.testapp.HomeScreenActivity, databaseEnabled=false, version=5.0.2, appActivity=io.selendroid.testapp.HomeScreenActivity, appactivity=.HomeScreenActivity, locationContextEnabled=false, deviceModel=HTC Desire 826 dual sim}]
+Session ID: 5b7cd417-5a85-46b1-8dae-8b5dd778de8b
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at io.appium.java_client.DefaultGenericMobileDriver.execute(DefaultGenericMobileDriver.java:40)
+	at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:235)
+	at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:521)
+	at GlobalInitializer.BrowserInitializer.closeBrowser(BrowserInitializer.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:212)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method status="SKIP" signature="executionResultFile()[pri:0, instance:Test.Scripts.RegisterUserTest@146ba0ac]" name="executionResultFile" is-config="true" duration-ms="0" started-at="2018-02-14T20:42:36Z" finished-at="2018-02-14T20:42:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- executionResultFile -->
+      </class> <!-- Test.Scripts.RegisterUserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

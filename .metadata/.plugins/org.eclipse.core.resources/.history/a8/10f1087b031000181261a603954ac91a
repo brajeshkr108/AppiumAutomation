@@ -1,0 +1,45 @@
+package Pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class RegisterPage {
+
+	public WebDriver driver;
+	
+	@FindBy(xpath="//android.widget.EditText[@content-desc='my_text_fieldCD']")
+	private WebElement localization_txt;
+	
+	@FindBy(xpath="//android.widget.ImageButton[@content-desc='startUserRegistrationCD']")
+	private WebElement browse_btn;
+	
+	@FindBy(xpath="//android.widget.EditText[@index='2']")
+	private WebElement username_txt;
+	
+	@FindBy(id="io.selendroid.testapp:id/inputEmail")
+	private WebElement email_txt;
+	
+	@FindBy(id="io.selendroid.testapp:id/inputPassword")
+	private WebElement password_txt;
+	
+	
+	
+	
+	public RegisterPage(WebDriver driver) 
+	{
+	this.driver=driver;
+	PageFactory.initElements(driver, this);;		
+	}
+	
+	public void enterLocalization(String input) {
+		localization_txt.sendKeys(input);
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,53 @@
+#Description : This file consists of below information.
+#Author : Testing Team
+#1.Application url.
+#2.All excel file paths.
+
+
+PlatformName=Android
+DeviceName= "CC5BDYG07101"
+Version=5.0.2
+Apppackage=io.selendroid.testapp
+Appactivity=.HomeScreenActivity
+URL=http://0.0.0.0:4723/wd/hub
+
+
+
+ExtentReportPath=.\\src\\main\\resources\\Extent_Reports\\MilestoneI_ExtentReports.html
+CustomerScreenPath_QA=https://wc2qa.ps.com/CustomerScreen/Mount
+CustomerScreenPath_AUT=http://wc2qa.ps.com/CustomerScreen/Mount
+CustomerScreenPath=https://wc2qa.ps.com/CustomerScreen/Mount
+
+App_URL_QA=http://wc2qa.ps.com/LogIn
+App_URL_QA=https://wc2qa.ps.com
+#App_URL_QA=http://wc2dev.ps.com/LogIn
+ExtentFolder=.\\src\\main\\resources\\Extent_Reports\\
+ExtentReportBackUpPath=.\\src\\main\\resources\\ExtentReports_BackUp\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

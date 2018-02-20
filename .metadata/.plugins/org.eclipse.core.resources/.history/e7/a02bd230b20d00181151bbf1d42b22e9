@@ -1,0 +1,38 @@
+package Test.Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+import GlobalInitializer.BrowserInitializer;
+//import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage.LoginPage;
+
+public class LoginTest extends BrowserInitializer {
+	public  WebDriver driver;
+	@Test
+	public void loginApp()  {
+		try{
+		
+			LoginPage loginpage=new LoginPage(driver);
+			loginpage.login("vfd", "554");
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	@AfterMethod
+	public void afterMethod(){
+		
+		
+
+	}	
+	
+	
+	
+}

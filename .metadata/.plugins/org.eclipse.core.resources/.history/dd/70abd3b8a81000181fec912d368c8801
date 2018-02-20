@@ -1,0 +1,50 @@
+#Description : This file consists of below information.
+#Author : Testing Team
+#1.Application url.
+#2.All excel file paths.
+
+
+PlatformName=Android
+DeviceName= "CC5BDYG07101"
+Version=5.0.2
+Apppackage=io.selendroid.testapp
+Appactivity=.HomeScreenActivity
+URL=http://0.0.0.0:4723/wd/hub
+
+
+
+ExtentReportPath=.\\src\\main\\resources\\Reports\\TestRunReport.html
+
+
+ScreenshotPath=.\\src\\main\\resources\\Screenshots
+
+ExtentFolder=.\\src\\main\\resources\\Extent_Reports\\
+ExtentReportBackUpPath=.\\src\\main\\resources\\ExtentReports_BackUp\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

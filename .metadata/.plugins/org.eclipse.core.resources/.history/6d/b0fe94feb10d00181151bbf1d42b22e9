@@ -1,0 +1,47 @@
+package Test.Scripts;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+
+//import GlobalInitializer.BrowserInitializer;
+import Pages.LoginPage.LoginPage;
+
+public class LoginTest  {
+	public  WebDriver driver;
+	@Test
+	public void loginApp()  {
+		try{
+		
+			
+			
+			System.setProperty("webdriver.chrome.driver", "./src/main/resources/drivers/chromedriver.exe");
+			driver=new ChromeDriver();
+		 	//driver.get(GenericFunctions.getPropertyValue("URL_GCEQAT"));
+			driver.get("http://demowebshop.tricentis.com/");
+		//	driver.manage().window().maximize();
+			System.out.println("Window maximized.");
+			//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			
+			LoginPage loginpage=new LoginPage(driver);
+			loginpage.login("vfd", "554");
+			
+		} catch (Exception e) {
+			
+		}
+	}
+	
+	@AfterMethod
+	public void afterMethod(){
+		
+		
+
+	}	
+	
+	
+	
+}

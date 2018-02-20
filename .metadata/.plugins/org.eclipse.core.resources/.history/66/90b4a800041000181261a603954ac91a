@@ -1,0 +1,72 @@
+package Pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class RegisterPage {
+
+	public WebDriver driver;
+	
+	@FindBy(xpath="//android.widget.EditText[@content-desc='my_text_fieldCD']")
+	private WebElement localization_txt;
+	
+	@FindBy(xpath="//android.widget.ImageButton[@content-desc='startUserRegistrationCD']")
+	private WebElement browse_btn;
+	
+	@FindBy(xpath="//android.widget.EditText[@index='2']")
+	private WebElement username_txt;
+	
+	@FindBy(id="io.selendroid.testapp:id/inputEmail")
+	private WebElement email_txt;
+	
+	@FindBy(id="io.selendroid.testapp:id/inputPassword")
+	private WebElement password_txt;
+	
+	
+	@FindBy(id="io.selendroid.testapp:id/inputName")
+	private WebElement name_txt;
+	
+	@FindBy(id="io.selendroid.testapp:id/input_preferedProgrammingLanguage")
+	private WebElement languageDD;
+	
+	@FindBy(xpath="//android.widget.CheckedTextView[@text='Java']")
+	private WebElement java;
+	
+	
+	
+	public RegisterPage(WebDriver driver) 
+	{
+	this.driver=driver;
+	PageFactory.initElements(driver, this);;		
+	}
+	
+	public void enterLocalization(String input) {
+		localization_txt.sendKeys(input);
+	}
+	
+	public void click_Browse(String input) {
+		browse_btn.click();
+	}
+	
+	public void enterUserDetails(String userName,String email,String password,String name) {
+		username_txt.sendKeys(userName+"\n");
+		email_txt.sendKeys(email+"\n");
+		password_txt.sendKeys(password+"\n");
+		username_txt.clear();
+		name_txt.sendKeys(name+"\n");
+	}
+	
+	public void click_Java() {
+		languageDD.click();
+		java.click();
+	}
+	
+	
+	
+	
+	
+}
